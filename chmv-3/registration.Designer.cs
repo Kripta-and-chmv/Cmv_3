@@ -84,6 +84,7 @@
             this.enter_button.TabIndex = 6;
             this.enter_button.Text = "Регистрация";
             this.enter_button.UseVisualStyleBackColor = true;
+            this.enter_button.Click += new System.EventHandler(this.enter_button_Click);
             // 
             // IsRegistrate
             // 

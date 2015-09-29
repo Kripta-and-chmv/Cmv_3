@@ -40,7 +40,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.enter = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.редактированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.управлениеПерсоналомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -129,9 +128,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(396, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 13);
+            this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Ценовой диапазон3434";
+            this.label1.Text = "Ценовой диапазон";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // enter
@@ -147,7 +146,6 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.редактированиеToolStripMenuItem,
             this.управлениеПерсоналомToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -155,12 +153,6 @@
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // редактированиеToolStripMenuItem
-            // 
-            this.редактированиеToolStripMenuItem.Name = "редактированиеToolStripMenuItem";
-            this.редактированиеToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
-            this.редактированиеToolStripMenuItem.Text = "Редактирование";
             // 
             // управлениеПерсоналомToolStripMenuItem
             // 
@@ -243,7 +235,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button enter;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem редактированиеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem управлениеПерсоналомToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

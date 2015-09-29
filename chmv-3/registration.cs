@@ -55,6 +55,7 @@ namespace chmv_3
                 mode_rigstration = false;
                 From_enter_to_registrat();
             }
+            
         }
 
         private void registration_Load(object sender, EventArgs e)
@@ -65,6 +66,11 @@ namespace chmv_3
         private void password_textbox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void enter_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

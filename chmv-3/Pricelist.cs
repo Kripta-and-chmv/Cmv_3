@@ -49,7 +49,7 @@ namespace chmv_3
         {
             {
                 registration goaway = new registration();
-                this.Hide();
+               
                 goaway.Show();
             }
         }
