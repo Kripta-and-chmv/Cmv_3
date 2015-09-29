@@ -78,5 +78,10 @@ namespace chmv_3
                 dataGridView1.ReadOnly = true;
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

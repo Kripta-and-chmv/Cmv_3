@@ -29,3 +29,6 @@ C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\obj\Debug\chmv_3.registrati
 C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\obj\Debug\chmv-3.csproj.GenerateResource.Cache
 C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\bin\Debug\chmv-3.exe
 C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\bin\Debug\chmv-3.pdb
+C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\bin\Debug\chmv-3.exe.config
+C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.exe
+C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.pdb

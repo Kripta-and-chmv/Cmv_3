@@ -129,9 +129,10 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(396, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 13);
+            this.label1.Size = new System.Drawing.Size(126, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Ценовой диапазон";
+            this.label1.Text = "Ценовой диапазон3434";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // enter
             // 
@@ -218,7 +219,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(690, 475);
             this.MinimumSize = new System.Drawing.Size(690, 475);
-          
+            this.Name = "Pricelist";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
