@@ -1,0 +1,31 @@
+c:\users\gener\documents\visual studio 2015\Projects\chmv-3\chmv-3\bin\Debug\chmv-3.exe.config
+c:\users\gener\documents\visual studio 2015\Projects\chmv-3\chmv-3\obj\Debug\chmv-3.csprojResolveAssemblyReference.cache
+c:\users\gener\documents\visual studio 2015\Projects\chmv-3\chmv-3\obj\Debug\chmv_3.Properties.Resources.resources
+c:\users\gener\documents\visual studio 2015\Projects\chmv-3\chmv-3\obj\Debug\chmv-3.csproj.GenerateResource.Cache
+c:\users\gener\documents\visual studio 2015\Projects\chmv-3\chmv-3\bin\Debug\chmv-3.exe
+c:\users\gener\documents\visual studio 2015\Projects\chmv-3\chmv-3\bin\Debug\chmv-3.pdb
+c:\users\gener\documents\visual studio 2015\Projects\chmv-3\chmv-3\obj\Debug\chmv-3.exe
+c:\users\gener\documents\visual studio 2015\Projects\chmv-3\chmv-3\obj\Debug\chmv-3.pdb
+c:\users\gener\documents\visual studio 2015\Projects\chmv-3\chmv-3\obj\Debug\chmv_3.Pricelist.resources
+c:\users\gener\documents\visual studio 2015\Projects\chmv-3\chmv-3\obj\Debug\chmv_3.registration.resources
+C:\pampam\Учеба\5 семестр\ЧМВ\chmv-3\chmv-3\chmv-3\bin\Debug\chmv-3.exe.config
+C:\pampam\Учеба\5 семестр\ЧМВ\chmv-3\chmv-3\chmv-3\obj\Debug\chmv-3.exe
+C:\pampam\Учеба\5 семестр\ЧМВ\chmv-3\chmv-3\chmv-3\obj\Debug\chmv-3.pdb
+C:\pampam\Учеба\5 семестр\ЧМВ\chmv-3\chmv-3\chmv-3\obj\Debug\chmv-3.csprojResolveAssemblyReference.cache
+C:\pampam\Учеба\5 семестр\ЧМВ\chmv-3\chmv-3\chmv-3\obj\Debug\chmv_3.Pricelist.resources
+C:\pampam\Учеба\5 семестр\ЧМВ\chmv-3\chmv-3\chmv-3\obj\Debug\chmv_3.Properties.Resources.resources
+C:\pampam\Учеба\5 семестр\ЧМВ\chmv-3\chmv-3\chmv-3\obj\Debug\chmv_3.registration.resources
+C:\pampam\Учеба\5 семестр\ЧМВ\chmv-3\chmv-3\chmv-3\obj\Debug\chmv-3.csproj.GenerateResource.Cache
+C:\pampam\Учеба\5 семестр\ЧМВ\chmv-3\chmv-3\chmv-3\bin\Debug\chmv-3.exe
+C:\pampam\Учеба\5 семестр\ЧМВ\chmv-3\chmv-3\chmv-3\bin\Debug\chmv-3.pdb
+C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\bin\Debug\chmv-3.exe.config
+C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\obj\Debug\chmv-3.exe
+C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\obj\Debug\chmv-3.pdb
+C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\obj\Debug\chmv-3.csprojResolveAssemblyReference.cache
+C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\obj\Debug\chmv_3.personnelManagement.resources
+C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\obj\Debug\chmv_3.Pricelist.resources
+C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\obj\Debug\chmv_3.Properties.Resources.resources
+C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\obj\Debug\chmv_3.registration.resources
+C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\obj\Debug\chmv-3.csproj.GenerateResource.Cache
+C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\bin\Debug\chmv-3.exe
+C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\bin\Debug\chmv-3.pdb
