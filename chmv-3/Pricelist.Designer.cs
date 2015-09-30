@@ -211,7 +211,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(690, 475);
             this.MinimumSize = new System.Drawing.Size(690, 475);
-            this.Name = "Pricelist";
+      
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Pricelist_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
