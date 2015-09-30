@@ -213,6 +213,7 @@
             this.MinimumSize = new System.Drawing.Size(690, 475);
             this.Name = "Pricelist";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Pricelist_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

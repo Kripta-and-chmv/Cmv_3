@@ -83,5 +83,10 @@ namespace chmv_3
         {
 
         }
+
+        private void Pricelist_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
