@@ -40,3 +40,14 @@ C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\obj\Debug\chmv_3.registration.resou
 C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.csproj.GenerateResource.Cache
 C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\bin\Debug\chmv-3.exe
 C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\bin\Debug\chmv-3.pdb
+D:\GitHub\Cmv_3\chmv-3\bin\Debug\chmv-3.exe.config
+D:\GitHub\Cmv_3\chmv-3\bin\Debug\chmv-3.exe
+D:\GitHub\Cmv_3\chmv-3\bin\Debug\chmv-3.pdb
+D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.csprojResolveAssemblyReference.cache
+D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv_3.personnelManagement.resources
+D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv_3.Pricelist.resources
+D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv_3.Properties.Resources.resources
+D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv_3.registration.resources
+D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.csproj.GenerateResource.Cache
+D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.exe
+D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.pdb
