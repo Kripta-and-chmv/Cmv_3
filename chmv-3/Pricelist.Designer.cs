@@ -32,7 +32,7 @@
             this.search = new System.Windows.Forms.Button();
             this.chooseCategory = new System.Windows.Forms.ComboBox();
             this.from = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.productTable = new System.Windows.Forms.DataGridView();
             this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +49,10 @@
             this.addCategoryButton = new System.Windows.Forms.Button();
             this.addProductLabel = new System.Windows.Forms.Label();
             this.addProductButton = new System.Windows.Forms.Button();
-            this.produstNameText = new System.Windows.Forms.TextBox();
+            this.productNameText = new System.Windows.Forms.TextBox();
             this.productCostText = new System.Windows.Forms.TextBox();
             this.productCategoryCombo = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,7 @@
             this.chooseCategory.Size = new System.Drawing.Size(126, 21);
             this.chooseCategory.TabIndex = 2;
             this.chooseCategory.Text = "Выберите категорию";
+            this.chooseCategory.SelectedIndexChanged += new System.EventHandler(this.chooseCategory_SelectedIndexChanged);
             // 
             // from
             // 
@@ -90,18 +91,18 @@
             this.from.Size = new System.Drawing.Size(46, 20);
             this.from.TabIndex = 3;
             // 
-            // dataGridView1
+            // productTable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Category,
             this.Name,
             this.Price});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 148);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 275);
-            this.dataGridView1.TabIndex = 5;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.productTable.Location = new System.Drawing.Point(13, 148);
+            this.productTable.Name = "productTable";
+            this.productTable.Size = new System.Drawing.Size(644, 275);
+            this.productTable.TabIndex = 5;
+            this.productTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Category
             // 
@@ -154,7 +155,7 @@
             this.управлениеПерсоналомToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(940, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(674, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -241,17 +242,19 @@
             this.addProductButton.TabIndex = 15;
             this.addProductButton.Text = "Добавить";
             this.addProductButton.UseVisualStyleBackColor = true;
+            this.addProductButton.Click += new System.EventHandler(this.addProductButton_Click);
             // 
-            // produstNameText
+            // productNameText
             // 
-            this.produstNameText.Location = new System.Drawing.Point(715, 284);
-            this.produstNameText.Name = "produstNameText";
-            this.produstNameText.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.produstNameText.Size = new System.Drawing.Size(130, 20);
-            this.produstNameText.TabIndex = 13;
-            this.produstNameText.Text = "Название товара";
-            this.produstNameText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.produstNameText.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.productNameText.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.productNameText.Location = new System.Drawing.Point(715, 284);
+            this.productNameText.Name = "productNameText";
+            this.productNameText.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.productNameText.Size = new System.Drawing.Size(130, 20);
+            this.productNameText.TabIndex = 13;
+            this.productNameText.Text = "Название товара";
+            this.productNameText.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.productNameText.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // productCostText
             // 
@@ -278,14 +281,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(940, 436);
+            this.ClientSize = new System.Drawing.Size(674, 436);
             this.Controls.Add(this.productCategoryCombo);
             this.Controls.Add(this.addProductButton);
             this.Controls.Add(this.addCategoryButton);
             this.Controls.Add(this.addProductLabel);
             this.Controls.Add(this.addCategoryLabel);
             this.Controls.Add(this.productCostText);
-            this.Controls.Add(this.produstNameText);
+            this.Controls.Add(this.productNameText);
             this.Controls.Add(this.categoryNameText);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label3);
@@ -293,7 +296,7 @@
             this.Controls.Add(this.enter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.to);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.productTable);
             this.Controls.Add(this.from);
             this.Controls.Add(this.chooseCategory);
             this.Controls.Add(this.search);
@@ -301,10 +304,10 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "Pricelist";
+            
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Pricelist_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productTable)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -318,7 +321,7 @@
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.ComboBox chooseCategory;
         private System.Windows.Forms.TextBox from;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView productTable;
         private System.Windows.Forms.TextBox to;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button enter;
@@ -332,7 +335,7 @@
         private System.Windows.Forms.Button addCategoryButton;
         private System.Windows.Forms.Label addProductLabel;
         private System.Windows.Forms.Button addProductButton;
-        private System.Windows.Forms.TextBox produstNameText;
+        private System.Windows.Forms.TextBox productNameText;
         private System.Windows.Forms.TextBox productCostText;
         private System.Windows.Forms.ComboBox productCategoryCombo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Category;
