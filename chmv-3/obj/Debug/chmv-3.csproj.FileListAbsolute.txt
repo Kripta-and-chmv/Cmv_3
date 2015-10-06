@@ -51,3 +51,6 @@ D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv_3.registration.resources
 D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.csproj.GenerateResource.Cache
 D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.exe
 D:\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.pdb
+C:\Users\Ivan\Source\Repos\Cmv_3\chmv-3\bin\Debug\chmv-3.exe.config
+C:\Users\Ivan\Source\Repos\Cmv_3\chmv-3\obj\Debug\chmv-3.exe
+C:\Users\Ivan\Source\Repos\Cmv_3\chmv-3\obj\Debug\chmv-3.pdb

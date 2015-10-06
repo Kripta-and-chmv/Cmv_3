@@ -44,6 +44,7 @@ namespace chmv_3
         {
             if (!check_search())
                 MessageBox.Show("Цена задана некорректно");
+         
         }
 
         private void enter_Click(object sender, EventArgs e)
