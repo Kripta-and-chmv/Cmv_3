@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pricelist));
             this.targetName = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.Button();
             this.chooseCategory = new System.Windows.Forms.ComboBox();
@@ -281,6 +282,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(674, 436);
             this.Controls.Add(this.productCategoryCombo);
             this.Controls.Add(this.addProductButton);
@@ -304,8 +306,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            
-            this.Text = "Form1";
+            this.Name = "Pricelist";
+            this.Text = "z";
             this.Load += new System.EventHandler(this.Pricelist_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productTable)).EndInit();
             this.menuStrip1.ResumeLayout(false);
