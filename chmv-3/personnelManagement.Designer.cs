@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(personnelManagement));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.category = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,9 +44,9 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.category,
             this.name});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 148);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 275);
+            this.dataGridView1.Size = new System.Drawing.Size(644, 396);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -89,6 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(674, 436);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menu);
