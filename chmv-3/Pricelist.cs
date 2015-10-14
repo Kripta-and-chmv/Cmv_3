@@ -29,7 +29,7 @@ namespace chmv_3
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            ыеквароилдьжю
         }
 
         private void enter_Click(object sender, EventArgs e)
