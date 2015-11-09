@@ -306,7 +306,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "Pricelist";
+      
             this.Text = "z";
             this.Load += new System.EventHandler(this.Pricelist_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productTable)).EndInit();
