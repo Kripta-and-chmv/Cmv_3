@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pricelist));
             this.targetName = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.Button();
@@ -53,13 +54,22 @@
             this.productNameText = new System.Windows.Forms.TextBox();
             this.productCostText = new System.Windows.Forms.TextBox();
             this.productCategoryCombo = new System.Windows.Forms.ComboBox();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.pricelistDataSet = new chmv_3.PricelistDataSet();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new chmv_3.PricelistDataSetTableAdapters.ProductsTableAdapter();
+            this.kategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.productTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pricelistDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // targetName
             // 
-            this.targetName.Location = new System.Drawing.Point(12, 39);
+            this.targetName.Location = new System.Drawing.Point(11, 55);
             this.targetName.Name = "targetName";
             this.targetName.Size = new System.Drawing.Size(329, 20);
             this.targetName.TabIndex = 0;
@@ -67,7 +77,7 @@
             // 
             // search
             // 
-            this.search.Location = new System.Drawing.Point(258, 90);
+            this.search.Location = new System.Drawing.Point(257, 106);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(83, 23);
             this.search.TabIndex = 1;
@@ -78,7 +88,7 @@
             // chooseCategory
             // 
             this.chooseCategory.FormattingEnabled = true;
-            this.chooseCategory.Location = new System.Drawing.Point(394, 38);
+            this.chooseCategory.Location = new System.Drawing.Point(393, 54);
             this.chooseCategory.Name = "chooseCategory";
             this.chooseCategory.Size = new System.Drawing.Size(126, 21);
             this.chooseCategory.TabIndex = 2;
@@ -87,19 +97,24 @@
             // 
             // from
             // 
-            this.from.Location = new System.Drawing.Point(394, 92);
+            this.from.Location = new System.Drawing.Point(393, 108);
             this.from.Name = "from";
             this.from.Size = new System.Drawing.Size(46, 20);
             this.from.TabIndex = 3;
             // 
             // productTable
             // 
+            this.productTable.AutoGenerateColumns = false;
             this.productTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Category,
             this.Name,
-            this.Price});
-            this.productTable.Location = new System.Drawing.Point(13, 148);
+            this.Price,
+            this.kategoryDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.priceDataGridViewTextBoxColumn});
+            this.productTable.DataSource = this.productsBindingSource;
+            this.productTable.Location = new System.Drawing.Point(12, 164);
             this.productTable.Name = "productTable";
             this.productTable.Size = new System.Drawing.Size(644, 275);
             this.productTable.TabIndex = 5;
@@ -125,7 +140,7 @@
             // 
             // to
             // 
-            this.to.Location = new System.Drawing.Point(474, 93);
+            this.to.Location = new System.Drawing.Point(473, 109);
             this.to.Name = "to";
             this.to.Size = new System.Drawing.Size(46, 20);
             this.to.TabIndex = 6;
@@ -133,7 +148,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(396, 73);
+            this.label1.Location = new System.Drawing.Point(395, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 7;
@@ -142,7 +157,7 @@
             // 
             // enter
             // 
-            this.enter.Location = new System.Drawing.Point(582, 38);
+            this.enter.Location = new System.Drawing.Point(581, 54);
             this.enter.Name = "enter";
             this.enter.Size = new System.Drawing.Size(75, 23);
             this.enter.TabIndex = 8;
@@ -156,7 +171,7 @@
             this.управлениеПерсоналомToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(674, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(681, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
@@ -171,7 +186,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(368, 95);
+            this.label2.Location = new System.Drawing.Point(367, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 10;
@@ -180,7 +195,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(446, 96);
+            this.label3.Location = new System.Drawing.Point(445, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(22, 13);
             this.label3.TabIndex = 11;
@@ -189,7 +204,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 125);
+            this.checkBox1.Location = new System.Drawing.Point(12, 141);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(110, 17);
             this.checkBox1.TabIndex = 12;
@@ -278,12 +293,55 @@
             this.productCategoryCombo.Text = "Категория";
             this.productCategoryCombo.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(530, 38);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(126, 13);
+            this.lblUsername.TabIndex = 17;
+            this.lblUsername.Text = "Вы не зашли в систему";
+            this.lblUsername.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // pricelistDataSet
+            // 
+            this.pricelistDataSet.DataSetName = "PricelistDataSet";
+            this.pricelistDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.pricelistDataSet;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // kategoryDataGridViewTextBoxColumn
+            // 
+            this.kategoryDataGridViewTextBoxColumn.DataPropertyName = "Kategory";
+            this.kategoryDataGridViewTextBoxColumn.HeaderText = "Kategory";
+            this.kategoryDataGridViewTextBoxColumn.Name = "kategoryDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            // 
             // Pricelist
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(674, 436);
+            this.ClientSize = new System.Drawing.Size(681, 451);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.productCategoryCombo);
             this.Controls.Add(this.addProductButton);
             this.Controls.Add(this.addCategoryButton);
@@ -304,14 +362,17 @@
             this.Controls.Add(this.search);
             this.Controls.Add(this.targetName);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-      
-            this.Text = "z";
+          
+            this.Text = "Pricelist";
             this.Load += new System.EventHandler(this.Pricelist_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productTable)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pricelistDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,6 +404,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Category;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.Label lblUsername;
+        private PricelistDataSet pricelistDataSet;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private PricelistDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kategoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
     }
 }
 

@@ -13,14 +13,39 @@ namespace chmv_3
 {
     public partial class Pricelist : Form
     {
+
         public Pricelist()
         {
             InitializeComponent();
             fillComboBoxes(productCategoryCombo);
             fillComboBoxes(chooseCategory);
             fillTable();
+
+
+        }
+        public void Rights(string rights)
+        {
+            if (rights == "User")
+            {
+                checkBox1.Visible = false;
+                menuStrip1.Visible = false;
+            }
+            if (rights == "SuperAdmonistrator")
+            {
+                checkBox1.Visible = true;
+                menuStrip1.Visible = true;
+            }
+            if (rights=="Administrator")
+            {
+                checkBox1.Visible = true;
+                menuStrip1.Visible = false;
+            }
         }
 
+        public void Welcome(string name)
+        {
+            lblUsername.Text = "Добро пожаловать, " + name + "!";
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -38,6 +63,7 @@ namespace chmv_3
                 registration goaway = new registration();
 
                 goaway.Show();
+                this.Hide();
             }
         }
 
@@ -73,6 +99,8 @@ namespace chmv_3
 
         private void Pricelist_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pricelistDataSet.Products". При необходимости она может быть перемещена или удалена.
+            this.productsTableAdapter.Fill(this.pricelistDataSet.Products);
 
         }
 
@@ -105,7 +133,7 @@ namespace chmv_3
                 return;
             }
 
-           
+
             //проверка на наличие категории
             bool chek = checkCategories(categoryNameText.Text);
             if (chek)
@@ -124,7 +152,7 @@ namespace chmv_3
             write_text.Close();
             categoryNameText.Text = "Название категории";
 
-           
+
 
         }
 
@@ -134,8 +162,8 @@ namespace chmv_3
 
         private void addProductButton_Click(object sender, EventArgs e)
         {
-            
-            if ((productCategoryCombo.Text==string.Empty)||(productCategoryCombo.Text=="Категория"))
+
+            if ((productCategoryCombo.Text == string.Empty) || (productCategoryCombo.Text == "Категория"))
             {
                 MessageBox.Show("Введите категорию");
                 return;
@@ -161,7 +189,7 @@ namespace chmv_3
             chek = checkItems();
             if (chek)
             {
-                MessageBox.Show("Товар с таким названием в категории '"+productCategoryCombo.Text+"' уже существует");
+                MessageBox.Show("Товар с таким названием в категории '" + productCategoryCombo.Text + "' уже существует");
                 return;
             }
             //проверка корректности цены
@@ -172,8 +200,8 @@ namespace chmv_3
                 return;
             }
             //добавление товара
-            string[] row=new string[3];
-            row[0] = productCategoryCombo.Text; row[1] = productNameText.Text; row[2] =productCostText.Text;
+            string[] row = new string[3];
+            row[0] = productCategoryCombo.Text; row[1] = productNameText.Text; row[2] = productCostText.Text;
             productTable.Rows.Add(row);
             //добавление товара в бд
             StreamWriter write_text;
@@ -198,12 +226,12 @@ namespace chmv_3
         }
         private void fillTable()
         {
-            string[] lineOfItems = File.ReadAllLines("items.txt");
+            /*string[] lineOfItems = File.ReadAllLines("items.txt");
             foreach (string line in lineOfItems)
             {
                 string[] parametres = line.Split(' ');
                 productTable.Rows.Add(parametres);
-            }
+            }*/
         }
 
         private bool checkCategories(string where)
@@ -222,7 +250,7 @@ namespace chmv_3
             string[] allLines = File.ReadAllLines("items.txt");
             foreach (string line in allLines)
             {
-                string [] row = line.Split(' ');
+                string[] row = line.Split(' ');
                 if ((row[0] == productCategoryCombo.Text) || (row[1] == productNameText.Text))
                     return true;
             }
@@ -238,6 +266,11 @@ namespace chmv_3
                     return false;
             }
             return true;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

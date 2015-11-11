@@ -92,9 +92,9 @@
             this.IsRegistrate.AutoSize = true;
             this.IsRegistrate.Location = new System.Drawing.Point(236, 41);
             this.IsRegistrate.Name = "IsRegistrate";
-            this.IsRegistrate.Size = new System.Drawing.Size(143, 13);
+            this.IsRegistrate.Size = new System.Drawing.Size(128, 13);
             this.IsRegistrate.TabIndex = 7;
-            this.IsRegistrate.Text = "Еще не зарегистированы?";
+            this.IsRegistrate.Text = "Уже зарегистированы?";
             // 
             // Registrat
             // 
@@ -102,7 +102,7 @@
             this.Registrat.Name = "Registrat";
             this.Registrat.Size = new System.Drawing.Size(86, 23);
             this.Registrat.TabIndex = 8;
-            this.Registrat.Text = "Регистрация";
+            this.Registrat.Text = "Войти";
             this.Registrat.UseVisualStyleBackColor = true;
             this.Registrat.Click += new System.EventHandler(this.Registrat_Click);
             // 
