@@ -79,11 +79,11 @@
             // 
             // enter_button
             // 
-            this.enter_button.Location = new System.Drawing.Point(40, 236);
+            this.enter_button.Location = new System.Drawing.Point(51, 123);
             this.enter_button.Name = "enter_button";
             this.enter_button.Size = new System.Drawing.Size(84, 23);
             this.enter_button.TabIndex = 6;
-            this.enter_button.Text = "Регистрация";
+            this.enter_button.Text = "Войти";
             this.enter_button.UseVisualStyleBackColor = true;
             this.enter_button.Click += new System.EventHandler(this.enter_button_Click);
             // 
@@ -92,9 +92,9 @@
             this.IsRegistrate.AutoSize = true;
             this.IsRegistrate.Location = new System.Drawing.Point(236, 41);
             this.IsRegistrate.Name = "IsRegistrate";
-            this.IsRegistrate.Size = new System.Drawing.Size(128, 13);
+            this.IsRegistrate.Size = new System.Drawing.Size(143, 13);
             this.IsRegistrate.TabIndex = 7;
-            this.IsRegistrate.Text = "Уже зарегистированы?";
+            this.IsRegistrate.Text = "Ещё не зарегистированы?";
             // 
             // Registrat
             // 
@@ -102,7 +102,7 @@
             this.Registrat.Name = "Registrat";
             this.Registrat.Size = new System.Drawing.Size(86, 23);
             this.Registrat.TabIndex = 8;
-            this.Registrat.Text = "Войти";
+            this.Registrat.Text = "Регистрация";
             this.Registrat.UseVisualStyleBackColor = true;
             this.Registrat.Click += new System.EventHandler(this.Registrat_Click);
             // 
@@ -115,6 +115,7 @@
             this.repit_password_label.Size = new System.Drawing.Size(152, 20);
             this.repit_password_label.TabIndex = 9;
             this.repit_password_label.Text = "Повторите пароль";
+            this.repit_password_label.Visible = false;
             // 
             // repet_passwor_textbox
             // 
@@ -122,6 +123,7 @@
             this.repet_passwor_textbox.Name = "repet_passwor_textbox";
             this.repet_passwor_textbox.Size = new System.Drawing.Size(151, 20);
             this.repet_passwor_textbox.TabIndex = 10;
+            this.repet_passwor_textbox.Visible = false;
             // 
             // email_textbox
             // 
@@ -129,6 +131,7 @@
             this.email_textbox.Name = "email_textbox";
             this.email_textbox.Size = new System.Drawing.Size(147, 20);
             this.email_textbox.TabIndex = 11;
+            this.email_textbox.Visible = false;
             // 
             // email_label
             // 
@@ -139,6 +142,7 @@
             this.email_label.Size = new System.Drawing.Size(160, 20);
             this.email_label.TabIndex = 12;
             this.email_label.Text = "Электронная почта";
+            this.email_label.Visible = false;
             // 
             // registration
             // 

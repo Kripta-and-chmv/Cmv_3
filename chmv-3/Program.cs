@@ -14,9 +14,14 @@ namespace chmv_3
         [STAThread]
         static void Main()
         {
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pricelist());
+            Pricelist start = new Pricelist();
+            start.getform(start);
+            Application.Run(start);
+           
+
         }
     }
 }

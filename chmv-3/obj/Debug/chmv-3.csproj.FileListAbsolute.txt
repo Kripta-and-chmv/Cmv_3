@@ -32,7 +32,6 @@ C:\Users\gener\Downloads\chmv-3\chmv-3\chmv-3\chmv-3\bin\Debug\chmv-3.pdb
 C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\bin\Debug\chmv-3.exe.config
 C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.exe
 C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.pdb
-C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.csprojResolveAssemblyReference.cache
 C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\obj\Debug\chmv_3.personnelManagement.resources
 C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\obj\Debug\chmv_3.Pricelist.resources
 C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\obj\Debug\chmv_3.Properties.Resources.resources
@@ -64,3 +63,4 @@ C:\Users\gener\Downloads\Cmv_3-8a14ea76d05b8a3e67538862f7eaeec6f5b95b4b\Cmv_3-8a
 C:\Users\gener\Downloads\Cmv_3-8a14ea76d05b8a3e67538862f7eaeec6f5b95b4b\Cmv_3-8a14ea76d05b8a3e67538862f7eaeec6f5b95b4b\chmv-3\bin\Debug\chmv-3.pdb
 C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\bin\Debug\Pricelist.mdf
 C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\bin\Debug\Pricelist_log.ldf
+C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\obj\Debug\chmv-3.csprojResolveAssemblyReference.cache

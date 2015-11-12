@@ -28,16 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pricelist));
             this.targetName = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.Button();
             this.chooseCategory = new System.Windows.Forms.ComboBox();
             this.from = new System.Windows.Forms.TextBox();
-            this.productTable = new System.Windows.Forms.DataGridView();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.to = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.enter = new System.Windows.Forms.Button();
@@ -55,16 +50,9 @@
             this.productCostText = new System.Windows.Forms.TextBox();
             this.productCategoryCombo = new System.Windows.Forms.ComboBox();
             this.lblUsername = new System.Windows.Forms.Label();
-            this.pricelistDataSet = new chmv_3.PricelistDataSet();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new chmv_3.PricelistDataSetTableAdapters.ProductsTableAdapter();
-            this.kategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.productTable)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pricelistDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // targetName
@@ -102,42 +90,6 @@
             this.from.Size = new System.Drawing.Size(46, 20);
             this.from.TabIndex = 3;
             // 
-            // productTable
-            // 
-            this.productTable.AutoGenerateColumns = false;
-            this.productTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Category,
-            this.Name,
-            this.Price,
-            this.kategoryDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn});
-            this.productTable.DataSource = this.productsBindingSource;
-            this.productTable.Location = new System.Drawing.Point(12, 164);
-            this.productTable.Name = "productTable";
-            this.productTable.Size = new System.Drawing.Size(644, 275);
-            this.productTable.TabIndex = 5;
-            this.productTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Category
-            // 
-            this.Category.HeaderText = "Категория";
-            this.Category.Name = "Category";
-            this.Category.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Category.Width = 200;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Название";
-            this.Name.Name = "Name";
-            this.Name.Width = 300;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Цена";
-            this.Price.Name = "Price";
-            // 
             // to
             // 
             this.to.Location = new System.Drawing.Point(473, 109);
@@ -174,6 +126,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(681, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.Visible = false;
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // управлениеПерсоналомToolStripMenuItem
@@ -210,6 +163,7 @@
             this.checkBox1.TabIndex = 12;
             this.checkBox1.Text = "Редактирование";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // categoryNameText
@@ -303,37 +257,16 @@
             this.lblUsername.Text = "Вы не зашли в систему";
             this.lblUsername.Click += new System.EventHandler(this.label4_Click);
             // 
-            // pricelistDataSet
+            // dataGridView1
             // 
-            this.pricelistDataSet.DataSetName = "PricelistDataSet";
-            this.pricelistDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.pricelistDataSet;
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // kategoryDataGridViewTextBoxColumn
-            // 
-            this.kategoryDataGridViewTextBoxColumn.DataPropertyName = "Kategory";
-            this.kategoryDataGridViewTextBoxColumn.HeaderText = "Kategory";
-            this.kategoryDataGridViewTextBoxColumn.Name = "kategoryDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 173);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(507, 90);
+            this.dataGridView1.TabIndex = 18;
             // 
             // Pricelist
             // 
@@ -341,6 +274,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(681, 451);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.productCategoryCombo);
             this.Controls.Add(this.addProductButton);
@@ -356,7 +290,6 @@
             this.Controls.Add(this.enter);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.to);
-            this.Controls.Add(this.productTable);
             this.Controls.Add(this.from);
             this.Controls.Add(this.chooseCategory);
             this.Controls.Add(this.search);
@@ -365,14 +298,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-          
+            this.Name = "Pricelist";
             this.Text = "Pricelist";
             this.Load += new System.EventHandler(this.Pricelist_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.productTable)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pricelistDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,7 +315,6 @@
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.ComboBox chooseCategory;
         private System.Windows.Forms.TextBox from;
-        private System.Windows.Forms.DataGridView productTable;
         private System.Windows.Forms.TextBox to;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button enter;
@@ -401,16 +331,8 @@
         private System.Windows.Forms.TextBox productNameText;
         private System.Windows.Forms.TextBox productCostText;
         private System.Windows.Forms.ComboBox productCategoryCombo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Category;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.Label lblUsername;
-        private PricelistDataSet pricelistDataSet;
-        private System.Windows.Forms.BindingSource productsBindingSource;
-        private PricelistDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

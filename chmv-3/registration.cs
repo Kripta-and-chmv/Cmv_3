@@ -16,11 +16,12 @@ namespace chmv_3
         SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\Pricelist.mdf;Integrated Security=True");
         SqlCommand cmd = new SqlCommand();
         SqlDataReader dr;
+        static Pricelist goaway;
 
-
-        public registration()
+        public registration(Pricelist kek)
         {
             InitializeComponent();
+            goaway = kek;
         }
         void From_registrtion_to_enter()
         {
@@ -48,7 +49,7 @@ namespace chmv_3
             enter_button.Text = "Регистрация";
 
         }
-        bool mode_rigstration = false; // false - режим входа,true - режим регистрации
+        bool mode_rigstration = true; // true - режим входа,false - режим регистрации
         private void Registrat_Click(object sender, EventArgs e)
         {
             if (!mode_rigstration)
@@ -168,12 +169,12 @@ namespace chmv_3
                    
                     cn.Close();
 
-                    Pricelist goaway = new Pricelist();
+                  
                     goaway.Welcome(Login_textbox.Text);
                     goaway.Rights("User");
                     goaway.Show();
 
-                    this.Close();
+                    this.Hide();
                 }
 
                 if (flag == 3)
@@ -223,11 +224,12 @@ namespace chmv_3
                     }
                     dr.Close();
                     cn.Close();
-                    Pricelist goaway = new Pricelist();
-                    goaway.Welcome(Login_textbox.Text);
+
                     goaway.Rights(rights);
+                    goaway.Welcome(Login_textbox.Text);
+                    
                     goaway.Show();
-                    this.Close();
+                    this.Hide();
                 }
                 if(flag==0)
                 {

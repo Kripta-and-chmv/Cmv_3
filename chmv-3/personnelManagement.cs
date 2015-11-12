@@ -12,11 +12,12 @@ namespace chmv_3
 {
     public partial class personnelManagement : Form
     {
-        private Pricelist pricelist;
+        private static Pricelist goaway;
 
-        public personnelManagement()
+        public personnelManagement(Pricelist kk)
         {
             InitializeComponent();
+            goaway = kk;
         }
 
       
@@ -28,6 +29,10 @@ namespace chmv_3
 
         private void personnelManagement_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "users._Users". При необходимости она может быть перемещена или удалена.
+            this.usersTableAdapter.Fill(this.users._Users);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pricelistDataSet.Users". При необходимости она может быть перемещена или удалена.
+
 
         }
 
@@ -38,9 +43,11 @@ namespace chmv_3
 
         private void Прайслист_Click(object sender, EventArgs e)
         {
-            Pricelist goaway = new Pricelist();
-            this.Hide();
+          //  Pricelist goaway = new Pricelist();
+           // goaway.Rights("SuperAdministrator");
+         
             goaway.Show();
+            this.Hide();
         }
     }
 }

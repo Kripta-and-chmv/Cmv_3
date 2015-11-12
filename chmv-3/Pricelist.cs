@@ -13,13 +13,17 @@ namespace chmv_3
 {
     public partial class Pricelist : Form
     {
-
+        static Pricelist kek = new Pricelist();
+        public void getform(Pricelist kk)
+        {
+            kek = kk;
+        }
         public Pricelist()
         {
             InitializeComponent();
             fillComboBoxes(productCategoryCombo);
             fillComboBoxes(chooseCategory);
-            fillTable();
+            //fillTable();
 
 
         }
@@ -30,7 +34,7 @@ namespace chmv_3
                 checkBox1.Visible = false;
                 menuStrip1.Visible = false;
             }
-            if (rights == "SuperAdmonistrator")
+            if (rights == "SuperAdministrator")
             {
                 checkBox1.Visible = true;
                 menuStrip1.Visible = true;
@@ -60,18 +64,27 @@ namespace chmv_3
         private void enter_Click(object sender, EventArgs e)
         {
             {
-                registration goaway = new registration();
-
+                registration goaway = new registration(kek);
+                goaway.FormClosed += new FormClosedEventHandler(regClose);
                 goaway.Show();
+                
                 this.Hide();
             }
         }
+        void regClose (object sender, FormClosedEventArgs e)
+        {
+            // here you can do anything
 
+            // we will close the application
+            Application.Exit();
+        }
         private void управлениеПерсоналомToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            personnelManagement goaway = new personnelManagement();
-            this.Hide();
+            personnelManagement goaway = new personnelManagement(kek);
+            goaway.FormClosed += new FormClosedEventHandler(regClose);
             goaway.Show();
+            this.Hide();
+            
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -99,8 +112,6 @@ namespace chmv_3
 
         private void Pricelist_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "pricelistDataSet.Products". При необходимости она может быть перемещена или удалена.
-            this.productsTableAdapter.Fill(this.pricelistDataSet.Products);
 
         }
 
@@ -202,7 +213,7 @@ namespace chmv_3
             //добавление товара
             string[] row = new string[3];
             row[0] = productCategoryCombo.Text; row[1] = productNameText.Text; row[2] = productCostText.Text;
-            productTable.Rows.Add(row);
+            //productTable.Rows.Add(row);
             //добавление товара в бд
             StreamWriter write_text;
             FileInfo file = new FileInfo("items.txt");
