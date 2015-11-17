@@ -61,6 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GetCategories.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GetCategories.xsd</DependentUpon>
+    </Compile>
     <Compile Include="personnelManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +78,11 @@
     <Compile Include="Pricelist.Designer.cs">
       <DependentUpon>Pricelist.cs</DependentUpon>
     </Compile>
+    <Compile Include="PricelistDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PricelistDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="registration.cs">
@@ -80,6 +90,11 @@
     </Compile>
     <Compile Include="registration.Designer.cs">
       <DependentUpon>registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rigths.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rigths.xsd</DependentUpon>
     </Compile>
     <Compile Include="Users.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -104,6 +119,28 @@
     <EmbeddedResource Include="registration.resx">
       <DependentUpon>registration.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="GetCategories.xsc">
+      <DependentUpon>GetCategories.xsd</DependentUpon>
+    </None>
+    <None Include="GetCategories.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GetCategories.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GetCategories.xss">
+      <DependentUpon>GetCategories.xsd</DependentUpon>
+    </None>
+    <None Include="PricelistDataSet.xsc">
+      <DependentUpon>PricelistDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PricelistDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PricelistDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PricelistDataSet.xss">
+      <DependentUpon>PricelistDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -113,6 +150,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Rigths.xsc">
+      <DependentUpon>Rigths.xsd</DependentUpon>
+    </None>
+    <None Include="Rigths.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Rigths.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Rigths.xss">
+      <DependentUpon>Rigths.xsd</DependentUpon>
+    </None>
     <None Include="Users.xsc">
       <DependentUpon>Users.xsd</DependentUpon>
     </None>

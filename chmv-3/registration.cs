@@ -29,7 +29,7 @@ namespace chmv_3
             repet_passwor_textbox.Visible = false;
             email_textbox.Visible = false;
             email_label.Visible = false;
-            enter_button.Location = new Point(51, 123);
+            enter_button.Location = new Point(51, 138);
             IsRegistrate.Text = "Еще не зарегистированы?";
             Registrat.Text = "Регистрация";
             enter_button.Text = "Вход";
@@ -42,7 +42,7 @@ namespace chmv_3
             repet_passwor_textbox.Visible = true;
             email_textbox.Visible = true;
             email_label.Visible = true;
-            enter_button.Location = new Point(46, 236);
+            enter_button.Location = new Point(46, 251);
 
             IsRegistrate.Text = "Уже зарегистрированы?";
             Registrat.Text = "Войти";
@@ -158,12 +158,18 @@ namespace chmv_3
 
                 if (flag == 0)
                 {
-                    cmd.CommandText = "insert into Users (Username, Password, Emails, Rights) values('" + Login_textbox.Text + "','" + password_textbox.Text + "','" + email_textbox.Text + "','"+rights + "')";
+                    cmd.CommandText = "insert into Users (Username, Password, Emails, Rights) values(@Login, @Pass,@Mail,@Right)";
+                    cmd.Parameters.AddWithValue("@Login", Login_textbox.Text);
+                    cmd.Parameters.AddWithValue("@Pass", password_textbox.Text);
+                    cmd.Parameters.AddWithValue("@Mail", email_textbox.Text);
+                    cmd.Parameters.AddWithValue("@Right", rights);
+
                     cmd.ExecuteNonQuery();
                     cmd.Clone();
                     cmd.CommandText = "insert into Emails (Emails) values('" + email_textbox.Text + "')";
                     cmd.ExecuteNonQuery();
                     cmd.Clone();
+                    cmd.Parameters.Clear();
                     MessageBox.Show("Регистрация успешно завершена!");
 
                    
@@ -241,6 +247,11 @@ namespace chmv_3
             return;
         }
 
+        private void назадToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            goaway.Show();
+            this.Hide();
+        }
     }
 
 

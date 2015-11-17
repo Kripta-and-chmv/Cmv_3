@@ -8,12 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SqlClient;
+
 
 namespace chmv_3
 {
     public partial class Pricelist : Form
     {
         static Pricelist kek = new Pricelist();
+
+        SqlConnection cn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\gener\Documents\GitHub\Cmv_3\chmv-3\Pricelist.mdf;Integrated Security=True");
+        SqlCommand cmd = new SqlCommand();
+        SqlDataReader dr;
+
         public void getform(Pricelist kk)
         {
             kek = kk;
@@ -21,25 +28,23 @@ namespace chmv_3
         public Pricelist()
         {
             InitializeComponent();
-            fillComboBoxes(productCategoryCombo);
-            fillComboBoxes(chooseCategory);
-            //fillTable();
-
 
         }
+#region Права и приветствие
         public void Rights(string rights)
         {
             if (rights == "User")
             {
                 checkBox1.Visible = false;
                 menuStrip1.Visible = false;
+                this.Width = 690;
             }
             if (rights == "SuperAdministrator")
             {
                 checkBox1.Visible = true;
                 menuStrip1.Visible = true;
             }
-            if (rights=="Administrator")
+            if (rights == "Administrator")
             {
                 checkBox1.Visible = true;
                 menuStrip1.Visible = false;
@@ -50,16 +55,48 @@ namespace chmv_3
         {
             lblUsername.Text = "Добро пожаловать, " + name + "!";
         }
-
+        #endregion
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
+#region Поиск
         private void button1_Click(object sender, EventArgs e)
         {
+            if ((from.Text != string.Empty) && (to.Text != string.Empty))
+                cmd.CommandText = "select Name from Products where Name like @Name and Category like @Cat and Price >= " + from.Text + " and Price <=" + to.Text;
+            if ((from.Text== string.Empty)&&(to.Text== string.Empty))
+                cmd.CommandText = "select Name from Products where Name like @Name and Category like @Cat";
+            if ((from.Text != string.Empty) && (to.Text == string.Empty))
+                cmd.CommandText = "select Name from Products where Name like @Name and Category like @Cat and Price >= " + from.Text;
+            if ((from.Text == string.Empty) && (to.Text != string.Empty))
+                cmd.CommandText = "select Name from Products where Name like @Name and Category like @Cat and Price <=" + to.Text;
+            listBox1.Items.Clear();
+
+            cmd.Parameters.AddWithValue("@Name", "%" + targetName.Text + "%");
+            cmd.Parameters.AddWithValue("@Cat", "%" + chooseCategory.Text + "%");
+            cn.Open();
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    listBox1.Items.Add(dr[0].ToString());
+                }
+            }
+            else
+            {
+                listBox1.Items.Add("Ничего не найдено!");
+            }
+            cmd.Parameters.Clear();
+            dr.Close();
+            cn.Close();
+            targetName.Text = string.Empty;
+            from.Text = string.Empty;
+            to.Text = string.Empty;
 
         }
+        #endregion
 
         private void enter_Click(object sender, EventArgs e)
         {
@@ -67,11 +104,11 @@ namespace chmv_3
                 registration goaway = new registration(kek);
                 goaway.FormClosed += new FormClosedEventHandler(regClose);
                 goaway.Show();
-                
+
                 this.Hide();
             }
         }
-        void regClose (object sender, FormClosedEventArgs e)
+        void regClose(object sender, FormClosedEventArgs e)
         {
             // here you can do anything
 
@@ -84,7 +121,7 @@ namespace chmv_3
             goaway.FormClosed += new FormClosedEventHandler(regClose);
             goaway.Show();
             this.Hide();
-            
+
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -109,11 +146,36 @@ namespace chmv_3
         {
 
         }
-
+#region Загрузка формы
         private void Pricelist_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "getCategories.Categories". При необходимости она может быть перемещена или удалена.
+            this.categoriesTableAdapter.Fill(this.getCategories.Categories);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "pricelistDataSet.Products". При необходимости она может быть перемещена или удалена.
+            this.productsTableAdapter.Fill(this.pricelistDataSet.Products);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "getCategory.Kategories". При необходимости она может быть перемещена или удалена.
+            cmd.Connection = cn;
+            LoadCategories();
+            LoadDGW();
 
         }
+        
+        private void LoadDGW()
+        {            
+            cn.Open();
+            cmd.CommandText = "Select * from Products";
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    dataGridView1.Rows.Add(dr[0].ToString(), dr[1].ToString(), dr[2].ToString());
+                }
+            }
+            dr.Close();
+            cn.Close();
+        }
+        #endregion
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -135,7 +197,7 @@ namespace chmv_3
 
 
         }
-
+#region Добавление категории
         private void button1_Click_1(object sender, EventArgs e)
         {
             if ((categoryNameText.Text == "Название категории") || (categoryNameText.Text == string.Empty))
@@ -143,33 +205,66 @@ namespace chmv_3
                 MessageBox.Show("Введите название категории");
                 return;
             }
-
-
             //проверка на наличие категории
-            bool chek = checkCategories(categoryNameText.Text);
-            if (chek)
+            cn.Open();
+
+            cmd.CommandText = "Select * from Categories";
+            dr = cmd.ExecuteReader();
+            bool flag = true;
+            if (dr.HasRows)
             {
-                MessageBox.Show("Данная категория уже существует");
-                return;
+
+                while (dr.Read())
+                {
+                    if (dr[0].ToString() == categoryNameText.Text)
+                    {
+                        MessageBox.Show("Такая категория уже существует!");
+                        return;
+                    }
+                }
             }
+            dr.Close();
+            if (flag)
+            {
 
-            productCategoryCombo.Items.Add(categoryNameText.Text);
+                cmd.CommandText = "insert into Categories (Category) values(@Cat)";
+                cmd.Parameters.AddWithValue("@Cat", categoryNameText.Text);
+                cmd.ExecuteNonQuery();
+                cmd.Clone();
+                MessageBox.Show("Категория успешно добавлена!");
+                dr.Close();
+                cn.Close();
+                cmd.Parameters.Clear();
 
-            //добавление категории в бд
-            StreamWriter write_text;
-            FileInfo file = new FileInfo("category.txt");
-            write_text = file.AppendText();
-            write_text.WriteLine(categoryNameText.Text);
-            write_text.Close();
-            categoryNameText.Text = "Название категории";
-
-
+                LoadCategories();
+                categoryNameText.Text = string.Empty;
+            }
 
         }
 
+        private void LoadCategories()
+        {
+            chooseCategory.Items.Clear();
+            productCategoryCombo.Items.Clear();
+            cn.Open();
+            cmd.CommandText = "Select * from Categories";
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                chooseCategory.Items.Add(dr[0].ToString());
+                productCategoryCombo.Items.Add(dr[0].ToString());
+            }
+            cn.Close();
+            dr.Close();
+
+        }
+        #endregion
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
         }
+
+#region Добавление товара 
 
         private void addProductButton_Click(object sender, EventArgs e)
         {
@@ -189,84 +284,60 @@ namespace chmv_3
                 MessageBox.Show("Введите цену товара");
                 return;
             }
-            //проверка на существование категории
-            bool chek = checkCategories(productCategoryCombo.Text);
-            if (!chek)
+
+            bool flag = checkCost(productCostText.Text);
+            if (!flag)
             {
-                MessageBox.Show("Данной категории не существует");
+                MessageBox.Show("Введённая цена некорректна");
                 return;
             }
-            //проверка на наличие товара в таблице
-            chek = checkItems();
-            if (chek)
+
+
+            cn.Open();
+            cmd.CommandText = "Select * from Products";
+            dr = cmd.ExecuteReader();
+            if (dr.HasRows)
             {
-                MessageBox.Show("Товар с таким названием в категории '" + productCategoryCombo.Text + "' уже существует");
-                return;
+                flag = false;
+                while (dr.Read())
+                {
+                    if ((dr[0].ToString() == productCategoryCombo.Text) && (dr[1].ToString() == productNameText.Text))
+                    {
+                        MessageBox.Show("Товар '" + productNameText.Text + "' в категории '" + productCategoryCombo.Text + "' уже существует!");
+                        flag = true;
+                        cn.Close();
+                        return;
+                    }
+                }
+                dr.Close();
+                if (!flag)
+                {
+                    cmd.CommandText = "insert into Products (Category, Name, Price) values(@Cat, @Name, @Price)";
+                    cmd.Parameters.AddWithValue("@Name", productNameText.Text);
+                    cmd.Parameters.AddWithValue("@Cat", productCategoryCombo.Text);
+                    cmd.Parameters.AddWithValue("@Price", productCostText.Text);
+                    cmd.ExecuteNonQuery();
+                    cmd.Clone();
+                    cmd.Parameters.Clear();
+                    MessageBox.Show("Товар '" + productNameText.Text + "' успешно добавлен в категорию '" + productCategoryCombo.Text + "'");
+                    
+                    cn.Close();
+                }
             }
-            //проверка корректности цены
-            chek = checkCost(productCostText.Text);
-            if (!chek)
-            {
-                MessageBox.Show("Цена задана некорректно");
-                return;
-            }
-            //добавление товара
-            string[] row = new string[3];
-            row[0] = productCategoryCombo.Text; row[1] = productNameText.Text; row[2] = productCostText.Text;
-            //productTable.Rows.Add(row);
-            //добавление товара в бд
-            StreamWriter write_text;
-            FileInfo file = new FileInfo("items.txt");
-            write_text = file.AppendText();
-            write_text.WriteLine(productCategoryCombo.Text + " " + productNameText.Text + " " + productCostText.Text);
-            write_text.Close();
-            productNameText.Text = "Название товара";
-            productCostText.Text = "Цена товара";
-            productCategoryCombo.Text = "Категория";
+            dr.Close();
+            dataGridView1.Rows.Add(productCategoryCombo.Text, productNameText.Text, productCostText.Text);
+            productNameText.Text = string.Empty;
+            productCostText.Text = string.Empty;
+            cmd.Parameters.Clear();
 
         }
+        #endregion
 
         private void chooseCategory_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        private void fillComboBoxes(ComboBox where)
-        {
-            string[] lineOfContents = File.ReadAllLines("category.txt");
-            where.Items.AddRange(lineOfContents);
-        }
-        private void fillTable()
-        {
-            /*string[] lineOfItems = File.ReadAllLines("items.txt");
-            foreach (string line in lineOfItems)
-            {
-                string[] parametres = line.Split(' ');
-                productTable.Rows.Add(parametres);
-            }*/
-        }
-
-        private bool checkCategories(string where)
-        {
-            string[] lineOfContents = File.ReadAllLines("category.txt");
-            foreach (string line in lineOfContents)
-            {
-                if (line == where)
-                    return true;
-            }
-            return false;
-        }
-
-        private bool checkItems()
-        {
-            string[] allLines = File.ReadAllLines("items.txt");
-            foreach (string line in allLines)
-            {
-                string[] row = line.Split(' ');
-                if ((row[0] == productCategoryCombo.Text) || (row[1] == productNameText.Text))
-                    return true;
-            }
-            return false;
-        }
+        
 
         private bool checkCost(string where)
         {
@@ -280,6 +351,11 @@ namespace chmv_3
         }
 
         private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -34,16 +34,27 @@
             this.Прайслист = new System.Windows.Forms.ToolStripMenuItem();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.users = new chmv_3.Users();
             this.usersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.users = new chmv_3.Users();
             this.usersTableAdapter = new chmv_3.UsersTableAdapters.UsersTableAdapter();
-            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rightsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.rightsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rigths = new chmv_3.Rigths();
+            this.rightsTableAdapter = new chmv_3.RigthsTableAdapters.RightsTableAdapter();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Права = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.users)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.users)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rigths)).BeginInit();
             this.SuspendLayout();
             // 
             // menu
@@ -68,46 +79,113 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.usernameDataGridViewTextBoxColumn,
-            this.rightsDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.usersBindingSource1;
+            this.Name,
+            this.Права});
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(12, 64);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(245, 137);
+            this.dataGridView1.Size = new System.Drawing.Size(244, 281);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // users
-            // 
-            this.users.DataSetName = "Users";
-            this.users.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usersBindingSource1
             // 
             this.usersBindingSource1.DataMember = "Users";
             this.usersBindingSource1.DataSource = this.users;
             // 
+            // users
+            // 
+            this.users.DataSetName = "Users";
+            this.users.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // usersTableAdapter
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
-            // usernameDataGridViewTextBoxColumn
+            // textBox1
             // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "Username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Username";
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.textBox1.Location = new System.Drawing.Point(348, 86);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(265, 20);
+            this.textBox1.TabIndex = 3;
             // 
-            // rightsDataGridViewTextBoxColumn
+            // label1
             // 
-            this.rightsDataGridViewTextBoxColumn.DataPropertyName = "Rights";
-            this.rightsDataGridViewTextBoxColumn.HeaderText = "Rights";
-            this.rightsDataGridViewTextBoxColumn.Name = "rightsDataGridViewTextBoxColumn";
-            this.rightsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(345, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Имя пользователя:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(348, 112);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Поиск";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(348, 141);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(265, 173);
+            this.listBox1.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(348, 324);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(138, 21);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Изменить категорию на";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.rightsBindingSource;
+            this.comboBox1.DisplayMember = "Right";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(492, 324);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 8;
+            // 
+            // rightsBindingSource
+            // 
+            this.rightsBindingSource.DataMember = "Rights";
+            this.rightsBindingSource.DataSource = this.rigths;
+            // 
+            // rigths
+            // 
+            this.rigths.DataSetName = "Rigths";
+            this.rigths.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rightsTableAdapter
+            // 
+            this.rightsTableAdapter.ClearBeforeFill = true;
+            // 
+            // Name
+            // 
+            this.Name.Frozen = true;
+            this.Name.HeaderText = "Имя";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
+            // Права
+            // 
+            this.Права.Frozen = true;
+            this.Права.HeaderText = "Rights";
+            this.Права.Name = "Права";
+            this.Права.ReadOnly = true;
             // 
             // personnelManagement
             // 
@@ -115,18 +193,26 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(674, 436);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menu;
-            this.Name = "personnelManagement";
+          
             this.Text = "personnelManagement";
             this.Load += new System.EventHandler(this.personnelManagement_Load);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.users)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.users)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rightsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rigths)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,7 +226,16 @@
         private Users users;
         private System.Windows.Forms.BindingSource usersBindingSource1;
         private UsersTableAdapters.UsersTableAdapter usersTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rightsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private Rigths rigths;
+        private System.Windows.Forms.BindingSource rightsBindingSource;
+        private RigthsTableAdapters.RightsTableAdapter rightsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Права;
     }
 }
