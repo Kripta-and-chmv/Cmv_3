@@ -219,6 +219,7 @@ namespace chmv_3
                     if (dr[0].ToString() == categoryNameText.Text)
                     {
                         MessageBox.Show("Такая категория уже существует!");
+                        cn.Close();
                         return;
                     }
                 }

@@ -52,6 +52,9 @@
             this.productCategoryCombo = new System.Windows.Forms.ComboBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pricelistDataSet = new chmv_3.PricelistDataSet();
             this.productsTableAdapter = new chmv_3.PricelistDataSetTableAdapters.ProductsTableAdapter();
@@ -62,9 +65,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.Category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
@@ -288,6 +288,27 @@
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
+            // Category
+            // 
+            this.Category.Frozen = true;
+            this.Category.HeaderText = "Категория";
+            this.Category.Name = "Category";
+            this.Category.ReadOnly = true;
+            // 
+            // Name
+            // 
+            this.Name.Frozen = true;
+            this.Name.HeaderText = "Название";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.Frozen = true;
+            this.Price.HeaderText = "Цена";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
             // productsBindingSource
             // 
             this.productsBindingSource.DataMember = "Products";
@@ -350,27 +371,6 @@
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 22;
             this.label6.Text = "Категория";
-            // 
-            // Category
-            // 
-            this.Category.Frozen = true;
-            this.Category.HeaderText = "Категория";
-            this.Category.Name = "Category";
-            this.Category.ReadOnly = true;
-            // 
-            // Name
-            // 
-            this.Name.Frozen = true;
-            this.Name.HeaderText = "Название";
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.Frozen = true;
-            this.Price.HeaderText = "Цена";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
             // 
             // Pricelist
             // 
